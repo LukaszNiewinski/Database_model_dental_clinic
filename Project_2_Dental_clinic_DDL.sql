@@ -7,13 +7,13 @@ use SIBD_dental_clinic;
 
 CREATE TABLE employee(
 VAT char(15),
-name char(30) NOT NULL,
+name varchar(150) NOT NULL,
 birth_date date,
-street char(30),
-city char(30),
-zip char(15),
-IBAN char(15) NOT NULL,
-salary char(15),
+street varchar(150),
+city varchar(150),
+zip varchar(15),
+IBAN varchar(20) NOT NULL,
+salary varchar(15),
 PRIMARY KEY (VAT),
 UNIQUE (IBAN),
 CHECK ( salary >= 0 )
