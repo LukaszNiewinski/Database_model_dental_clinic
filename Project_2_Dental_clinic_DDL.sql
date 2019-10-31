@@ -1,7 +1,10 @@
 
-drop database SIBD_dental_clinic;
+DROP DATABASE IF EXISTS SIBD_dental_clinic;
+
 CREATE database SIBD_dental_clinic;
+
 use SIBD_dental_clinic;
+
 CREATE TABLE employee(
 VAT char(15),
 name char(30) NOT NULL,
