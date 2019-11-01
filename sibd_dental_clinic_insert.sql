@@ -127,7 +127,14 @@ INSERT INTO `appointment` (`VAT_doctor`, `date_timestamp`, `description`, `VAT_c
 ('100048', '2020-05-23 08:45:10', 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed tortor. Integer aliquam adipiscing lacus. Ut nec urna et arcu imperdiet ullamcorper. Duis at lacus. Quisque purus sapien, gravida non, sollicitudin a, malesuada id, erat. Etiam vestibulum massa rutrum magna. Cras convallis convallis dolor. Quisque tincidunt pede ac urna. Ut tincidunt vehicula risus. Nulla eget', '200077'),
 ('100049', '2018-03-25 07:28:39', 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed tortor. Integer aliquam adipiscing lacus. Ut nec urna et arcu imperdiet ullamcorper. Duis at lacus. Quisque purus sapien, gravida non, sollicitudin a, malesuada id, erat. Etiam vestibulum massa rutrum magna. Cras convallis convallis dolor. Quisque tincidunt pede ac urna. Ut tincidunt vehicula risus. Nulla eget metus eu erat semper rutrum. Fusce dolor quam, elementum at, egestas a, scelerisque sed, sapien. Nunc pulvinar arcu et pede. Nunc sed orci lobortis augue scelerisque mollis. Phasellus libero mauris, aliquam eu, accumsan sed, facilisis vitae, orci. Phasellus dapibus quam quis diam. Pellentesque habitant', '200072'),
 ('100050', '2019-03-17 02:28:22', 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed tortor. Integer aliquam adipiscing lacus. Ut nec urna et arcu imperdiet ullamcorper. Duis at lacus. Quisque purus sapien, gravida non, sollicitudin a, malesuada id, erat. Etiam vestibulum massa rutrum magna. Cras convallis convallis dolor.', '200022'),
-('100050', '2020-10-09 07:00:23', 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed tortor. Integer aliquam adipiscing lacus. Ut nec urna et arcu imperdiet ullamcorper. Duis at lacus. Quisque purus sapien, gravida non, sollicitudin a, malesuada id, erat. Etiam vestibulum massa rutrum magna. Cras convallis convallis dolor. Quisque tincidunt pede ac urna. Ut tincidunt vehicula risus. Nulla eget metus eu erat semper rutrum. Fusce dolor quam, elementum at, egestas a, scelerisque sed, sapien. Nunc pulvinar arcu et pede. Nunc sed orci lobortis augue scelerisque mollis. Phasellus libero mauris, aliquam eu, accumsan sed, facilisis vitae, orci. Phasellus dapibus quam quis diam. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Fusce aliquet magna a neque. Nullam ut nisi a odio semper cursus. Integer', '200074');
+('100050', '2020-10-09 07:00:23', 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed tortor. Integer aliquam adipiscing lacus. Ut nec urna et arcu imperdiet ullamcorper. Duis at lacus. Quisque purus sapien, gravida non, sollicitudin a, malesuada id, erat. Etiam vestibulum massa rutrum magna. Cras convallis convallis dolor. Quisque tincidunt pede ac urna. Ut tincidunt vehicula risus. Nulla eget metus eu erat semper rutrum. Fusce dolor quam, elementum at, egestas a, scelerisque sed, sapien. Nunc pulvinar arcu et pede. Nunc sed orci lobortis augue scelerisque mollis. Phasellus libero mauris, aliquam eu, accumsan sed, facilisis vitae, orci. Phasellus dapibus quam quis diam. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Fusce aliquet magna a neque. Nullam ut nisi a odio semper cursus. Integer', '200074'),
+
+('1000100', '2018-10-09 07:00:23', 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed tortor. Integer aliquam adipiscing lacus. Ut nec urna et arcu imperdiet ullamcorper. Duis at lacus. Quisque purus sapien, gravida non, sollicitudin a, malesuada id, erat. Etiam vestibulum massa rutrum magna. Cras convallis convallis dolor. Quisque tincidunt pede ac urna. Ut tincidunt vehicula risus. Nulla eget metus eu erat semper rutrum. Fusce dolor quam, elementum at, egestas a, scelerisque sed, sapien. Nunc pulvinar arcu et pede. Nunc sed orci lobortis augue scelerisque mollis. Phasellus libero mauris, aliquam eu, accumsan sed, facilisis vitae, orci. Phasellus dapibus quam quis diam. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Fusce aliquet magna a neque. Nullam ut nisi a odio semper cursus. Integer', '200000'),
+('1000100', '2010-10-09 07:00:23', 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed tortor. Integer aliquam adipiscing lacus. Ut nec urna et arcu imperdiet ullamcorper. Duis at lacus. Quisque purus sapien, gravida non, sollicitudin a, malesuada id, erat. Etiam vestibulum massa rutrum magna. Cras convallis convallis dolor. Quisque tincidunt pede ac urna. Ut tincidunt vehicula risus. Nulla eget metus eu erat semper rutrum. Fusce dolor quam, elementum at, egestas a, scelerisque sed, sapien. Nunc pulvinar arcu et pede. Nunc sed orci lobortis augue scelerisque mollis. Phasellus libero mauris, aliquam eu, accumsan sed, facilisis vitae, orci. Phasellus dapibus quam quis diam. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Fusce aliquet magna a neque. Nullam ut nisi a odio semper cursus. Integer', '200000'),
+('1000100', '2019-10-09 07:00:23', 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed tortor. Integer aliquam adipiscing lacus. Ut nec urna et arcu imperdiet ullamcorper. Duis at lacus. Quisque purus sapien, gravida non, sollicitudin a, malesuada id, erat. Etiam vestibulum massa rutrum magna. Cras convallis convallis dolor. Quisque tincidunt pede ac urna. Ut tincidunt vehicula risus. Nulla eget metus eu erat semper rutrum. Fusce dolor quam, elementum at, egestas a, scelerisque sed, sapien. Nunc pulvinar arcu et pede. Nunc sed orci lobortis augue scelerisque mollis. Phasellus libero mauris, aliquam eu, accumsan sed, facilisis vitae, orci. Phasellus dapibus quam quis diam. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Fusce aliquet magna a neque. Nullam ut nisi a odio semper cursus. Integer', '200002'),
+('1000100', '2020-10-09 07:00:23', 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed tortor. Integer aliquam adipiscing lacus. Ut nec urna et arcu imperdiet ullamcorper. Duis at lacus. Quisque purus sapien, gravida non, sollicitudin a, malesuada id, erat. Etiam vestibulum massa rutrum magna. Cras convallis convallis dolor. Quisque tincidunt pede ac urna. Ut tincidunt vehicula risus. Nulla eget metus eu erat semper rutrum. Fusce dolor quam, elementum at, egestas a, scelerisque sed, sapien. Nunc pulvinar arcu et pede. Nunc sed orci lobortis augue scelerisque mollis. Phasellus libero mauris, aliquam eu, accumsan sed, facilisis vitae, orci. Phasellus dapibus quam quis diam. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Fusce aliquet magna a neque. Nullam ut nisi a odio semper cursus. Integer', '200087'),
+('1000100', '2013-10-09 07:00:23', 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed tortor. Integer aliquam adipiscing lacus. Ut nec urna et arcu imperdiet ullamcorper. Duis at lacus. Quisque purus sapien, gravida non, sollicitudin a, malesuada id, erat. Etiam vestibulum massa rutrum magna. Cras convallis convallis dolor. Quisque tincidunt pede ac urna. Ut tincidunt vehicula risus. Nulla eget metus eu erat semper rutrum. Fusce dolor quam, elementum at, egestas a, scelerisque sed, sapien. Nunc pulvinar arcu et pede. Nunc sed orci lobortis augue scelerisque mollis. Phasellus libero mauris, aliquam eu, accumsan sed, facilisis vitae, orci. Phasellus dapibus quam quis diam. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Fusce aliquet magna a neque. Nullam ut nisi a odio semper cursus. Integer', '200087')
+;
 
 --
 -- Daten für Tabelle `client`
@@ -136,7 +143,7 @@ INSERT INTO `appointment` (`VAT_doctor`, `date_timestamp`, `description`, `VAT_c
 INSERT INTO `client` (`VAT`, `name`, `birth_date`, `street`, `city`, `zip`, `gender`, `age`) VALUES
 ('200000', 'Holden', '1932-05-14 15:16:24', '3920 Dui Rd.', 'San Miguel', '99929', '', 40),
 ('200001', 'Wright', '1938-05-17 04:03:37', 'P.O. Box 226, 8811 Dolor. St.', 'Nandyal', '80645', 'man', 41),
-('200002', 'Carroll', '1992-07-26 01:07:01', '848 Est Avenue', 'Hudson\'s Hope', '09-237', 'man', 56),
+('200002', 'Carroll', '1992-07-26 01:07:01', '848 Est Avenue', 'Hudson s Hope', '09-237', 'man', 56),
 ('200003', 'Hall', '2014-07-16 20:53:48', '757-306 A, Rd.', 'Ananindeua', '0060 QG', 'man', 41),
 ('200004', 'Rosales', '1982-12-30 03:36:53', '667-3134 Turpis Road', 'Vigo', '6366', 'man', 46),
 ('200005', 'Simpson', '2007-08-25 15:48:22', '389-6072 Ligula. Avenue', 'Miramichi', 'J68 5BA', 'man', 32),
@@ -196,9 +203,9 @@ INSERT INTO `client` (`VAT`, `name`, `birth_date`, `street`, `city`, `zip`, `gen
 ('200059', 'Hale', '1916-05-16 23:25:56', 'Ap #438-2456 Dictum. St.', 'Delitzsch', '94062-825', '', 47),
 ('200060', 'Morrow', '1937-02-26 01:28:59', 'Ap #931-1150 Commodo Av.', 'Paulatuk', '25098', '', 37),
 ('200061', 'Alvarado', '1927-05-30 07:20:20', '204-1958 Dui St.', 'Tirupati', '150067', '', 45),
-('200062', 'Bartlett', '1954-04-21 14:34:43', '337-4693 Ante Road', 'Çeşme', '6687 NV', 'man', 34),
+('200062', 'Bartlett', '1954-04-21 14:34:43', '337-4693 Ante Road', 'Cesmme', '6687 NV', 'man', 34),
 ('200063', 'Wood', '1996-07-07 02:25:25', 'P.O. Box 629, 7772 Eu, Av.', 'Juiz de Fora', '553500', '', 27),
-('200064', 'Sanford', '1963-09-03 09:23:46', 'Ap #597-2257 Dignissim St.', 'Francavilla Fontana', '861910', 'man', 51),
+('200064', 'Sanford', '1963-09-03 09:23:46', 'Ap #597-2257 Dignissim St.', 'Francavilla', '861910', 'man', 51),
 ('200065', 'Weber', '1941-09-30 05:52:58', '1269 Nibh. Av.', 'Manoppello', '88139', 'man', 43),
 ('200066', 'Shelton', '2008-11-10 11:11:46', 'P.O. Box 812, 5524 Class St.', 'Warszawa', '74136', 'man', 28),
 ('200067', 'Bruce', '1931-09-22 22:27:30', 'P.O. Box 163, 6469 Facilisi. A', 'Montemesola', '54427', 'man', 18),
@@ -213,7 +220,7 @@ INSERT INTO `client` (`VAT`, `name`, `birth_date`, `street`, `city`, `zip`, `gen
 ('200076', 'Salinas', '2003-06-23 15:02:34', 'P.O. Box 501, 1217 Etiam Avenu', 'Sefro', '7779', '', 46),
 ('200077', 'Anderson', '1938-03-13 09:33:21', '2887 Vitae Ave', 'Herstal', '61124', '', 52),
 ('200078', 'Reid', '1953-05-11 09:38:19', 'P.O. Box 790, 9514 Eu Road', 'Oberhausen', '35520', '', 47),
-('200079', 'Harrington', '1960-11-06 16:13:54', '4473 Fusce Ave', 'O\'Higgins', '71062-944', '', 43),
+('200079', 'Harrington', '1960-11-06 16:13:54', '4473 Fusce Ave', 'O Higgins', '71062-944', '', 43),
 ('200080', 'Sanders', '2010-11-21 04:07:39', '8671 Est Ave', 'Lathuy', '58762', 'man', 40),
 ('200081', 'Mitchell', '1937-09-04 16:18:33', '355-2887 Non Rd.', 'Merchtem', '748002', '', 47),
 ('200082', 'Bonner', '1974-04-24 03:50:31', 'P.O. Box 759, 635 Sed Rd.', 'Chartres', '495539', 'man', 48),
@@ -231,7 +238,7 @@ INSERT INTO `client` (`VAT`, `name`, `birth_date`, `street`, `city`, `zip`, `gen
 ('200094', 'Gomez', '1905-12-24 06:01:18', '7578 Neque St.', 'Nethen', '50247', '', 60),
 ('200095', 'Ellis', '1949-03-17 12:00:51', '907-6068 Ac Rd.', 'Barrackpur', '7424', '', 50),
 ('200096', 'Mercado', '2012-11-18 21:45:28', 'Ap #482-8390 A, Street', 'Sierning', '70318', 'man', 51),
-('200097', 'Patterson', '2000-11-09 11:49:17', '8306 Risus. Av.', 'Rocca d\'Arce', '2549', 'man', 38),
+('200097', 'Patterson', '2000-11-09 11:49:17', '8306 Risus. Av.', 'Rocca d Arce', '2549', 'man', 38),
 ('200098', 'Rodriquez', '1945-02-02 00:45:49', 'P.O. Box 420, 1591 Urna Rd.', 'Sete Lagoas', '97556', 'man', 43),
 ('200099', 'Hunt', '1919-03-09 14:41:49', '678-7935 Lobortis Rd.', 'Ravensburg', '22393', 'man', 22);
 
@@ -290,7 +297,9 @@ INSERT INTO `doctor` (`VAT`, `specialization`, `biography`, `email`) VALUES
 ('100047', 'Gastroenterologist', 'pharetra sed, hendrerit a, arcu. Sed et libero. Proin mi. Aliquam gravida mauris ut mi. Duis risus', 'porttitor.scelerisque.neque@nu'),
 ('100048', 'Cardiologist', 'Nam tempor diam dictum sapien. Aenean massa. Integer vitae nibh. Donec est mauris, rhoncus id,', 'ornare.tortor.at@Cum.com'),
 ('100049', 'Anesthesiologist', 'sapien imperdiet ornare. In faucibus. Morbi vehicula. Pellentesque tincidunt tempus risus.', 'diam.dictum.sapien@velnislQuis'),
-('100050', 'Pulmonologist', 'et ipsum cursus vestibulum. Mauris', 'mollis.dui.in@metus.edu');
+('100050', 'Pulmonologist', 'et ipsum cursus vestibulum. Mauris', 'mollis.dui.in@metus.edu'),
+('1000100', 'General medecine', 'et ipsum cursus vestibulum. Mauris', 'jsweet.dui.in@metus.edu')
+;
 
 --
 -- Daten für Tabelle `employee`
@@ -327,7 +336,7 @@ INSERT INTO `employee` (`VAT`, `name`, `birth_date`, `street`, `city`, `zip`, `I
 ('100027', 'Maldonado', '1969-12-31', '4224 Duis Street', 'Santa María', '19242', 'UP870005888503501155', '2872.548'),
 ('100028', 'Joyner', '1969-12-31', '1081 Vitae, Rd.', 'Fredericton', '9128 CU', 'VX267161725394227156', '2466.813'),
 ('100029', 'Rice', '1969-12-31', '9951 Accumsan St.', 'Berloz', '05422', 'RY152125193186412126', '2680.885'),
-('100030', 'Miranda', '1969-12-31', '7726 Leo. Road', 'Viranşehir', '946138', 'ZH912448521446887213', '2541.184'),
+('100030', 'Miranda', '1969-12-31', '7726 Leo. Road', 'Viransehir', '946138', 'ZH912448521446887213', '2541.184'),
 ('100031', 'Stone', '1969-12-31', '936-5949 Suspendisse Street', 'Clearwater Municipal District', 'QI34 9KU', 'IT021578012883548627', '2896.892'),
 ('100032', 'Cherry', '1969-12-31', 'P.O. Box 268, 2793 Nec, Road', 'Palencia', '980227', 'EI239994870042630298', '2502.681'),
 ('100033', 'Gomez', '1969-12-31', '395-3579 Malesuada Ave', 'Fort Smith', '77-363', 'LP281161049426377015', '2839.138'),
@@ -396,7 +405,9 @@ INSERT INTO `employee` (`VAT`, `name`, `birth_date`, `street`, `city`, `zip`, `I
 ('100096', 'French', '1969-12-31', '9479 Quisque Ave', 'Fairbanks', '0779', 'IL365704411309533056', '2457.97'),
 ('100097', 'Powers', '1969-12-31', 'Ap #302-7527 Dictum Street', 'Canterbury', '50305-778', 'CU278930517991226525', '2901.042'),
 ('100098', 'Brooks', '1969-12-31', 'Ap #443-5584 Augue Rd.', 'Bolzano/Bozen', '9705', 'TV859831928920866089', '2407.25'),
-('100099', 'Sullivan', '1969-12-31', '613-7652 Egestas. Av.', 'Burntisland', '4025', 'EJ271855178796802059', '2203.932');
+('100099', 'Sullivan', '1969-12-31', '613-7652 Egestas. Av.', 'Burntisland', '4025', 'EJ271855178796802059', '2203.932'),
+('1000100', 'Jane Sweettoth', '1962-12-31', '613-7652 Egestas. Av.', 'Drohiczyn', '4025', 'EJ271855178796802455', '2203.932')
+;
 
 --
 -- Daten für Tabelle `nurse`
@@ -481,6 +492,26 @@ INSERT INTO `receptionist` (`VAT`) VALUES
 ('100092'),
 ('100093'),
 ('100094');
+
+INSERT INTO phone_number_employee (VAT, phone) VALUES
+(100000, 783827758),
+(100000, 783827734),
+(100001, 733834758),
+(100002, 733834759),
+(100087, 7332834759),
+(100087, 7432834759);
+
+INSERT INTO phone_number_client (VAT, phone) VALUES
+(200000, 883827758),
+(200000, 883827734),
+(200001, 833834758),
+(200002, 833834759),
+(200087, 8332834759),
+(200087, 8432834759);
+
+
+
+
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

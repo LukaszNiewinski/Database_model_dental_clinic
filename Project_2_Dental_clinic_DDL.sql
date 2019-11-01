@@ -70,7 +70,7 @@ CREATE TABLE client(
     street char(30),
     city char(30),
     zip char(15),
-    gender ENUM('man', 'woman'),
+    gender ENUM('man', 'woman', ''),
     primary key (VAT),
     age int
 );
