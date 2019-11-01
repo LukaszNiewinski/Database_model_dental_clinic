@@ -45,9 +45,10 @@ foreign key (VAT) references doctor (VAT)
 );
 CREATE TABLE trainee_doctor(
 VAT char(30),
-supervisor TINYINT NOT NULL,
+VAT_supervisor char(30) NOT NULL,
 primary key (VAT),
-foreign key (VAT) references permanent_doctor(VAT)
+foreign key (VAT) references doctor(VAT),
+foreign key (VAT_supervisor) references permanent_doctor(VAT)
 );
 CREATE TABLE supervision_report(
 VAT char(15),
