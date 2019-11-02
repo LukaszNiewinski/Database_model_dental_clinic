@@ -368,7 +368,7 @@ INSERT INTO `trainee_doctor` (`VAT`, `VAT_supervisor`) VALUES
 ('100045', '100001'),
 ('100048', '100100'),
 ('100049', '100100'),
-('100024', '100100'),
+('100024', '100100')
 ;
 
 
@@ -495,14 +495,34 @@ INSERT INTO `appointment` (`VAT_doctor`, `date_timestamp`, `description`, `VAT_c
 ('100100', '2010-10-09 07:00:24', 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed tortor. Integer aliquam adipiscing lacus. Ut nec urna et arcu imperdiet ullamcorper. Duis at lacus. Quisque purus sapien, gravida non, sollicitudin a, malesuada id, erat. Etiam vestibulum massa rutrum magna. Cras convallis convallis dolor. Quisque tincidunt pede ac urna. Ut tincidunt vehicula risus. Nulla eget metus eu erat semper rutrum. Fusce dolor quam, elementum at, egestas a, scelerisque sed, sapien. Nunc pulvinar arcu et pede. Nunc sed orci lobortis augue scelerisque mollis. Phasellus libero mauris, aliquam eu, accumsan sed, facilisis vitae, orci. Phasellus dapibus quam quis diam. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Fusce aliquet magna a neque. Nullam ut nisi a odio semper cursus. Integer', '200000'),
 ('100100', '2019-10-09 07:00:25', 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed tortor. Integer aliquam adipiscing lacus. Ut nec urna et arcu imperdiet ullamcorper. Duis at lacus. Quisque purus sapien, gravida non, sollicitudin a, malesuada id, erat. Etiam vestibulum massa rutrum magna. Cras convallis convallis dolor. Quisque tincidunt pede ac urna. Ut tincidunt vehicula risus. Nulla eget metus eu erat semper rutrum. Fusce dolor quam, elementum at, egestas a, scelerisque sed, sapien. Nunc pulvinar arcu et pede. Nunc sed orci lobortis augue scelerisque mollis. Phasellus libero mauris, aliquam eu, accumsan sed, facilisis vitae, orci. Phasellus dapibus quam quis diam. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Fusce aliquet magna a neque. Nullam ut nisi a odio semper cursus. Integer', '200002'),
 ('100100', '2020-10-09 07:00:26', 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed tortor. Integer aliquam adipiscing lacus. Ut nec urna et arcu imperdiet ullamcorper. Duis at lacus. Quisque purus sapien, gravida non, sollicitudin a, malesuada id, erat. Etiam vestibulum massa rutrum magna. Cras convallis convallis dolor. Quisque tincidunt pede ac urna. Ut tincidunt vehicula risus. Nulla eget metus eu erat semper rutrum. Fusce dolor quam, elementum at, egestas a, scelerisque sed, sapien. Nunc pulvinar arcu et pede. Nunc sed orci lobortis augue scelerisque mollis. Phasellus libero mauris, aliquam eu, accumsan sed, facilisis vitae, orci. Phasellus dapibus quam quis diam. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Fusce aliquet magna a neque. Nullam ut nisi a odio semper cursus. Integer', '200087'),
-('100100', '2013-10-09 07:00:27', 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed tortor. Integer aliquam adipiscing lacus. Ut nec urna et arcu imperdiet ullamcorper. Duis at lacus. Quisque purus sapien, gravida non, sollicitudin a, malesuada id, erat. Etiam vestibulum massa rutrum magna. Cras convallis convallis dolor. Quisque tincidunt pede ac urna. Ut tincidunt vehicula risus. Nulla eget metus eu erat semper rutrum. Fusce dolor quam, elementum at, egestas a, scelerisque sed, sapien. Nunc pulvinar arcu et pede. Nunc sed orci lobortis augue scelerisque mollis. Phasellus libero mauris, aliquam eu, accumsan sed, facilisis vitae, orci. Phasellus dapibus quam quis diam. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Fusce aliquet magna a neque. Nullam ut nisi a odio semper cursus. Integer', '200087')
+('100100', '2013-10-09 07:00:27', 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed tortor. Integer aliquam adipiscing lacus. Ut nec urna et arcu imperdiet ullamcorper. Duis at lacus. Quisque purus sapien, gravida non, sollicitudin a, malesuada id, erat. Etiam vestibulum massa rutrum magna. Cras convallis convallis dolor. Quisque tincidunt pede ac urna. Ut tincidunt vehicula risus. Nulla eget metus eu erat semper rutrum. Fusce dolor quam, elementum at, egestas a, scelerisque sed, sapien. Nunc pulvinar arcu et pede. Nunc sed orci lobortis augue scelerisque mollis. Phasellus libero mauris, aliquam eu, accumsan sed, facilisis vitae, orci. Phasellus dapibus quam quis diam. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Fusce aliquet magna a neque. Nullam ut nisi a odio semper cursus. Integer', '200087'),
+('100034', '2014-03-28 15:02:06', 'Lorem ipsum dolor sit amet,', '200039'),
+('100034', '2012-03-18 15:03:06', 'Lorem ipsum dolor sit amet,', '200039'),
+('100100', '2017-02-28 15:04:06', 'Lorem ipsum dolor sit amet,', '200011'),
+('100023', '2010-01-21 15:03:06', 'Lorem ipsum dolor sit amet,', '200011'),
+('100001', '2019-03-23 15:05:06', 'Lorem ipsum dolor sit amet,', '200000')
 ;
 
 INSERT INTO `consultation` (`VAT_doctor`, `date_timestamp`, `SOAP_S`, `SOAP_O`, `SOAP_A`, `SOAP_P`) VALUES
-('100100', '2010-10-09 07:00:24', 'Hallo', 'Hallo', 'Hallo', 'Hallo'),
-('100023', '2018-03-23 23:38:07', 'Hallo', 'Hallo', 'Hallo', 'Hallo'),
-('100002', '2018-04-16 05:18:05', 'Hallo', 'Hallo', 'Hallo', 'Hallo'),
-('100043', '2018-05-06 05:50:48', 'Hallo', 'Hallo', 'Hallo', 'Hallo');
+('100100', '2010-10-09 07:00:24', 'Quick case', 'Needs special treatment gingivitisgingivitis', 'Hallo', 'Hallo'),
+('100023', '2018-03-23 23:38:07', 'Well and smooth', 'periodontitis to eliminate', 'Hallo', 'Hallo'),
+('100002', '2018-04-16 05:18:05', 'Needs help of doctor Jane Sweettoth', 'Hallo', 'Hallo', 'Hallo'),
+('100043', '2018-05-06 05:50:48', 'Patient was agressive ', '', 'Hallo', 'Hallo'),
+
+('100031', '2019-07-10 23:10:08', 'Brave Patient, periodontitis, everything went smooth', 'eliminate periodontitis, get rid of ', 'Give him promo code', 'Hallo'),
+('100047', '2019-09-06 01:03:44', 'Brave Patient, everything went smooth, gingivitis', 'tooth to remove', 'Give him promo code', 'Hallo'),
+('100100', '2018-10-09 07:00:23', 'Brave Patient, periodontitis and gingivitis, everything went smooth', 'Bad case, nothing to do', 'Hallo', 'Patient is fighting with gingivitis'),
+('100026', '2019-05-08 11:25:21', 'Brave Patient, everything went smooth', ' Bad conditions gingivitis', 'One of our favourite patients', 'Hallo'),
+('100100', '2013-10-09 07:00:27', 'Brave Patient, periodontitis, everything went smooth', 'periodontitis', 'Hallo', 'Hallo'),
+('100031', '2019-03-30 05:50:28', 'Brave Patient, everything went smooth', 'gingivitisgingivitis ', 'Give him promo code', 'One of our favourite patients'),
+('100044', '2018-09-03 04:35:53', 'Brave Patient, everything went smooth', 'Patient is fighting with gingivitis', 'Hallo', 'Hallo'),
+('100002', '2019-06-12 06:42:06', 'Brave Patient, everything went smooth', 'Patient is in good condition overall ', 'Give him promo code', 'One of our favourite patients'),
+('100034', '2012-03-18 15:03:06', 'Brave Patient, periodontitis and gingivitis, everything went smooth', 'Bad case, nothing to do', 'Hallo', 'Patient is fighting with gingivitis'),
+('100100', '2017-02-28 15:04:06', 'Brave Patient, periodontitis and gingivitis, everything went smooth', 'Bad case, nothing to do', 'Hallo', 'Patient is fighting with gingivitis'),
+('100023', '2010-01-21 15:03:06', 'Brave Patient, periodontitis, everything went smooth', 'eliminate periodontitis, get rid of gingivitis', 'Give him promo code', 'Hallo'),
+('100001', '2019-03-23 15:05:06', 'Brave Patient, periodontitis, everything went smooth', 'eliminate periodontitis, get rid of rotten tooth', 'Give him promo code', 'Hallo'),
+('100034', '2014-03-28 15:02:06', 'Brave Patient, xxxx, everything went smooth', 'eliminate obstacles, get rid of rotten tooth', 'Give him promo code', 'Hallo')
+;
 
 
 INSERT INTO `medication` (`name`, `lab`) VALUES
