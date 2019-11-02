@@ -528,11 +528,21 @@ INSERT INTO `consultation` (`VAT_doctor`, `date_timestamp`, `SOAP_S`, `SOAP_O`, 
 INSERT INTO `medication` (`name`, `lab`) VALUES
 ('Ibuprofen', 'Rat & Tat'),
 ('Paracetamol', 'Bayer'),
-('Thomapyrin', 'SANOFI');
+('Thomapyrin', 'SANOFI'),
+('Aspiryna', 'SANOFI'),
+('Tabcin', 'Rat & Tat'),
+('Tabcin', 'SANOFI'),
+('Rutinoscorbin', 'SANOFI')
+;
 
 INSERT INTO `diagnostic_code` (`ID`, `description`) VALUES
 ('1', 'Removed'),
-('2', 'Drilled');
+('2', 'Drilled'),
+('3', 'tamper-proof'),
+('4', 'whitened'),
+('5', 'enhanced'),
+('6', 'artificial')
+;
 
 
 INSERT INTO `consultation_diagnostic` (`VAT_doctor`, `date_timestamp`, `ID`) VALUES
@@ -540,7 +550,15 @@ INSERT INTO `consultation_diagnostic` (`VAT_doctor`, `date_timestamp`, `ID`) VAL
 ('100100', '2010-10-09 07:00:24', '2'),
 ('100023', '2018-03-23 23:38:07', '2'),
 ('100002', '2018-04-16 05:18:05', '1'),
-('100043', '2018-05-06 05:50:48', '2');
+('100043', '2018-05-06 05:50:48', '2'),
+
+('100002', '2019-06-12 06:42:06', '3'),
+('100034', '2012-03-18 15:03:06', '3'),
+('100100', '2017-02-28 15:04:06', '4'),
+('100023', '2010-01-21 15:03:06', '5'),
+('100001', '2019-03-23 15:05:06', '5'),
+('100034', '2014-03-28 15:02:06', '4')
+;
 
 
 
@@ -549,7 +567,14 @@ INSERT INTO `prescription` (`name`, `lab`, `VAT_doctor`, `ID`, `date_timestamp`,
 ('Ibuprofen', 'Rat & Tat', '100100', '2', '2010-10-09 07:00:24', 'Theeth drilled'),
 ('Paracetamol', 'Bayer', '100023', '2', '2018-03-23 23:38:07', 'Theeth drilled'),
 ('Paracetamol', 'Bayer', '100002', '1', '2018-04-16 05:18:05', 'Theeth drilled'),
-('Thomapyrin', 'SANOFI', '100043', '2', '2018-05-06 05:50:48', 'Theeth removed');
+('Thomapyrin', 'SANOFI', '100043', '2', '2018-05-06 05:50:48', 'Theeth drilled'),
+('Thomapyrin', 'SANOFI', '100002', '3', '2019-06-12 06:42:06', 'Theeth tampered'),
+('Tabcin', 'Rat & Tat', '100034', '3', '2012-03-18 15:03:06', 'Theeth tampered'),
+('Tabcin', 'Rat & Tat', '100100', '4', '2017-02-28 15:04:06', 'Theeth whitened'),
+('Tabcin', 'SANOFI', '100023', '5', '2010-01-21 15:03:06', 'Thooths endurance improved'),
+('Tabcin', 'SANOFI', '100001', '5', '2019-03-23 15:05:06', 'Thooths endurance improved'),
+('Rutinoscorbin', 'SANOFI', '100034', '4', '2014-03-28 15:02:06', 'Theeth whitened')
+;
 
 INSERT INTO `procedure_clinic`(`name`, `type`) VALUES 
 ('Tooth extraction', 'Default'),

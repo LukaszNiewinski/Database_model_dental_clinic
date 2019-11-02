@@ -47,6 +47,11 @@ SELECT DISTINCT c.name, c.city, c.VAT, c2.date_timestamp from client c join appo
 
 
 # 4. Name, VAT, address(street, city, zip) of client that had appointments but never had consultation
-SELECT c.name, c.VAT, c.street, c.city, c.zip from client c join appointment a on c.VAT = a.VAT_client
+SELECT c.name, c.VAT as VAT_client, c.street, c.city, c.zip from client c join appointment a on c.VAT = a.VAT_client
     where a.date_timestamp < CURRENT_TIME() and (a.VAT_doctor, a.date_timestamp) not in (select con.VAT_doctor, con.date_timestamp from consultation con);
 
+# 5. For each diagnosis: code and description, list the number of distinct medication names that have been prescribed to treat that condition.
+# sort by number of distinct medications names, ASC
+SELECT d_c.ID as diagnosis_id, d_c.description as diagnosis_description, COUNT(DISTINCT p.name) as number_medicaments_prescribed from diagnostic_code d_c join consultation_diagnostic cd on d_c.ID = cd.ID
+    join prescription p on cd.VAT_doctor = p.VAT_doctor and cd.date_timestamp = p.date_timestamp and cd.ID = p.ID
+    group by d_c.ID, d_c.description order by COUNT(DISTINCT  p.name) ASC;
