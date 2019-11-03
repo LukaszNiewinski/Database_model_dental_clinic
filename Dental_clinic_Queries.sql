@@ -14,7 +14,7 @@ SELECT DISTINCT c.name, c.city, c.VAT from
     and con.date_timestamp = ap.date_timestamp join client cl on ap.VAT_client = cl.VAT group by cl.VAT) as r_c on c.VAT = r_c.client_vat and c2.date_timestamp = r_c.recent_consultation
     where  c2.SOAP_O like '%gingivitis%' or c2.SOAP_O like '%periodontitis%';
 
-# QUERY TO TEST ANSWER 3.
+# query to perform test/validation
 #select cl.VAT, con.VAT_doctor,  MAX(con.date_timestamp), con.SOAP_O from consultation con join appointment ap on con.VAT_doctor = ap.VAT_doctor and con.date_timestamp = ap.date_timestamp join client cl on ap.VAT_client = cl.VAT group by cl.VAT;
 
 # 4. Name, VAT, address(street, city, zip) of client that had appointments but never had consultation
@@ -46,4 +46,8 @@ SELECT DISTINCT AVG(ca1.count_nurse) as avg_num_nurses_above18, AVG(pic1.count_p
         where cd.date_timestamp >= DATE('2019-01-01') and (YEAR(CURDATE()) - YEAR(c.birth_date)) < 18 group by cd.date_timestamp, cd.VAT_doctor) as cd2
 ;
 
-
+# 7. For each diagnostic code, present the name of the most common medication used to treat that condition
+# should it display medecines which occur to be in prescription equal number of times?
+SELECT dc.ID, pre.name, COUNT(pre.name) as quantity from diagnostic_code dc join prescription pre on pre.ID = dc.ID
+    group by dc.ID, pre.name having quantity >= all (Select COUNT(pre1.name) from diagnostic_code dc1 join prescription pre1 on pre1.ID = dc1.ID
+        where dc1.ID = dc.ID group by dc1.ID, pre1.name);

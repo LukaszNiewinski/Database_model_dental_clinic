@@ -556,7 +556,10 @@ INSERT INTO `consultation_diagnostic` (`VAT_doctor`, `date_timestamp`, `ID`) VAL
 ('100100', '2017-02-28 15:04:06', '4'),
 ('100023', '2010-01-21 15:03:06', '5'),
 ('100001', '2019-03-23 15:05:06', '5'),
-('100034', '2014-03-28 15:02:06', '4')
+('100034', '2014-03-28 15:02:06', '4'),
+
+('100031', '2019-07-10 23:10:08', '2'),
+('100047', '2019-09-06 01:03:44', '1')
 ;
 
 INSERT INTO consultation_assistant VALUES
@@ -580,6 +583,10 @@ INSERT INTO consultation_assistant VALUES
 INSERT INTO `prescription` (`name`, `lab`, `VAT_doctor`, `ID`, `date_timestamp`, `description`) VALUES
 ('Ibuprofen', 'Rat & Tat', '100100', '1', '2010-10-09 07:00:24', 'Theeth drilled'),
 ('Ibuprofen', 'Rat & Tat', '100100', '2', '2010-10-09 07:00:24', 'Theeth drilled'),
+
+('Paracetamol', 'Bayer', '100031', '2', '2019-07-10 23:10:08', 'Theeth drilled'),
+('Ibuprofen', 'Rat & Tat', '100047', '1', '2019-09-06 01:03:44', 'Theeth drilled'),
+
 ('Paracetamol', 'Bayer', '100023', '2', '2018-03-23 23:38:07', 'Theeth drilled'),
 ('Paracetamol', 'Bayer', '100002', '1', '2018-04-16 05:18:05', 'Theeth drilled'),
 ('Thomapyrin', 'SANOFI', '100043', '2', '2018-05-06 05:50:48', 'Theeth drilled'),
