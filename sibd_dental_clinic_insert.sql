@@ -521,7 +521,8 @@ INSERT INTO `consultation` (`VAT_doctor`, `date_timestamp`, `SOAP_S`, `SOAP_O`, 
 ('100100', '2017-02-28 15:04:06', 'Brave Patient, periodontitis and gingivitis, everything went smooth', 'Bad case, nothing to do', 'Hallo', 'Patient is fighting with gingivitis'),
 ('100023', '2010-01-21 15:03:06', 'Brave Patient, periodontitis, everything went smooth', 'eliminate periodontitis, get rid of gingivitis', 'Give him promo code', 'Hallo'),
 ('100001', '2019-03-23 15:05:06', 'Brave Patient, periodontitis, everything went smooth', 'eliminate periodontitis, get rid of rotten tooth', 'Give him promo code', 'Hallo'),
-('100034', '2014-03-28 15:02:06', 'Brave Patient, xxxx, everything went smooth', 'eliminate obstacles, get rid of rotten tooth', 'Give him promo code', 'Hallo')
+('100034', '2014-03-28 15:02:06', 'Brave Patient, xxxx, everything went smooth', 'eliminate obstacles, get rid of rotten tooth', 'Give him promo code', 'Hallo'),
+('100043', '2019-07-31 16:18:17', 'Brave Patient, xxxx, everything went smooth', 'eliminate obstacles, get rid of rotten tooth', 'Give him promo code', 'Hallo')
 ;
 
 
@@ -539,8 +540,8 @@ INSERT INTO `diagnostic_code` (`ID`, `description`) VALUES
 ('1', 'Removed'),
 ('2', 'Drilled'),
 ('3', 'tamper-proof'),
-('4', 'whitened'),
-('5', 'enhanced'),
+('4', 'infectious disease'),
+('5', 'dental cavities'),
 ('6', 'artificial')
 ;
 
@@ -557,9 +558,10 @@ INSERT INTO `consultation_diagnostic` (`VAT_doctor`, `date_timestamp`, `ID`) VAL
 ('100023', '2010-01-21 15:03:06', '5'),
 ('100001', '2019-03-23 15:05:06', '5'),
 ('100034', '2014-03-28 15:02:06', '4'),
-
+('100043', '2019-07-31 16:18:17', '4'),
 ('100031', '2019-07-10 23:10:08', '2'),
-('100047', '2019-09-06 01:03:44', '1')
+('100047', '2019-09-06 01:03:44', '1'),
+('100026', '2019-05-08 11:25:21', '4')
 ;
 
 INSERT INTO consultation_assistant VALUES
@@ -583,6 +585,7 @@ INSERT INTO consultation_assistant VALUES
 INSERT INTO `prescription` (`name`, `lab`, `VAT_doctor`, `ID`, `date_timestamp`, `description`) VALUES
 ('Ibuprofen', 'Rat & Tat', '100100', '1', '2010-10-09 07:00:24', 'Theeth drilled'),
 ('Ibuprofen', 'Rat & Tat', '100100', '2', '2010-10-09 07:00:24', 'Theeth drilled'),
+('Ibuprofen', 'Rat & Tat', '100026', '4', '2019-05-08 11:25:21', 'Theeth drilled'),
 
 ('Paracetamol', 'Bayer', '100031', '2', '2019-07-10 23:10:08', 'Theeth drilled'),
 ('Ibuprofen', 'Rat & Tat', '100047', '1', '2019-09-06 01:03:44', 'Theeth drilled'),
@@ -595,6 +598,7 @@ INSERT INTO `prescription` (`name`, `lab`, `VAT_doctor`, `ID`, `date_timestamp`,
 ('Tabcin', 'Rat & Tat', '100100', '4', '2017-02-28 15:04:06', 'Theeth whitened'),
 ('Tabcin', 'SANOFI', '100023', '5', '2010-01-21 15:03:06', 'Thooths endurance improved'),
 ('Tabcin', 'SANOFI', '100001', '5', '2019-03-23 15:05:06', 'Thooths endurance improved'),
+('Tabcin', 'SANOFI', '100043', '4', '2019-07-31 16:18:17', 'Thooths endurance improved'),
 ('Rutinoscorbin', 'SANOFI', '100034', '4', '2014-03-28 15:02:06', 'Theeth whitened')
 ;
 

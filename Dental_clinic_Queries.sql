@@ -47,7 +47,21 @@ SELECT DISTINCT AVG(ca1.count_nurse) as avg_num_nurses_above18, AVG(pic1.count_p
 ;
 
 # 7. For each diagnostic code, present the name of the most common medication used to treat that condition
-# should it display medecines which occur to be in prescription equal number of times?
+# should it display medications which occur to be in prescription equal number of times? what about diagnostics related to diagnostics?
 SELECT dc.ID, pre.name, COUNT(pre.name) as quantity from diagnostic_code dc join prescription pre on pre.ID = dc.ID
     group by dc.ID, pre.name having quantity >= all (Select COUNT(pre1.name) from diagnostic_code dc1 join prescription pre1 on pre1.ID = dc1.ID
         where dc1.ID = dc.ID group by dc1.ID, pre1.name);
+
+# 8. list alphabetically the names and the labs of medications that in 2019 been used to treat 'dental cavities' but not been used to treat any
+# 'infectious disease'. where in which field we should strore informations 'infectious disease' and 'dental cavities' - in diagnosis?
+# should we distinguish medications with same name but different labs?
+SELECT med.name, med.lab from medication med
+where (med.name, med.lab) in (SELECT med.name, med.lab from medication med join prescription p on med.name = p.name and med.lab = p.lab
+    join consultation_diagnostic cd on p.VAT_doctor = cd.VAT_doctor and p.date_timestamp = cd.date_timestamp and p.ID = cd.ID
+    join diagnostic_code dc on cd.ID = dc.ID
+    where YEAR(cd.date_timestamp) = 2019 and dc.description like 'infectious disease')
+  and (med.name, med.lab) not in  (SELECT med.name, med.lab from medication med join prescription p on med.name = p.name and med.lab = p.lab
+    join consultation_diagnostic cd on p.VAT_doctor = cd.VAT_doctor and p.date_timestamp = cd.date_timestamp and p.ID = cd.ID
+    join diagnostic_code dc on cd.ID = dc.ID
+    where YEAR(cd.date_timestamp) = 2019 and dc.description like 'dental cavities') order by med.name, med.lab;
+

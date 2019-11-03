@@ -185,30 +185,3 @@ CREATE TABLE procedure_charting(
     foreign key (name, VAT, date_timestamp) references procedure_in_consultation(NAME, VAT_DOCTOR, DATE_TIMESTAMP)
 
 );
-
-
-# DESCRIBE STATEMENTS TO ANALISE
-describe employee;
-describe nurse;
-describe receptionist;
-describe doctor;
-describe permanent_doctor;
-describe trainee_doctor;
-describe supervision_report;
-describe phone_number_employee;
-describe client;
-describe phone_number_client;
-describe appointment;
-describe consultation;
-describe consultation_assistant;
-describe diagnostic_code;
-describe diagnostic_code_relation;
-describe consultation_diagnostic;
-describe medication;
-describe prescription;
-describe procedure_clinic;
-describe procedure_in_consultation;
-describe procedure_radiology;
-describe teeth;
-describe procedure_charting;
-
