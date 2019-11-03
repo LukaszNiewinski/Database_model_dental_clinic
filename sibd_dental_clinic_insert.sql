@@ -522,7 +522,10 @@ INSERT INTO `consultation` (`VAT_doctor`, `date_timestamp`, `SOAP_S`, `SOAP_O`, 
 ('100023', '2010-01-21 15:03:06', 'Brave Patient, periodontitis, everything went smooth', 'eliminate periodontitis, get rid of gingivitis', 'Give him promo code', 'Hallo'),
 ('100001', '2019-03-23 15:05:06', 'Brave Patient, periodontitis, everything went smooth', 'eliminate periodontitis, get rid of rotten tooth', 'Give him promo code', 'Hallo'),
 ('100034', '2014-03-28 15:02:06', 'Brave Patient, xxxx, everything went smooth', 'eliminate obstacles, get rid of rotten tooth', 'Give him promo code', 'Hallo'),
-('100043', '2019-07-31 16:18:17', 'Brave Patient, xxxx, everything went smooth', 'eliminate obstacles, get rid of rotten tooth', 'Give him promo code', 'Hallo')
+('100043', '2019-07-31 16:18:17', 'Brave Patient, xxxx, everything went smooth', 'eliminate obstacles, get rid of rotten tooth', 'Give him promo code', 'Hallo'),
+
+('100050', '2019-03-17 02:28:22', 'Brave Patient, periodontitis, everything went smooth', 'eliminate periodontitis, get rid of ', 'Give him promo code', 'Hallo'),
+('100036', '2019-04-22 08:31:17', 'Brave Patient, everything went smooth, gingivitis', 'tooth to remove', 'Give him promo code', 'Hallo')
 ;
 
 

@@ -54,7 +54,7 @@ SELECT dc.ID, pre.name, COUNT(pre.name) as quantity from diagnostic_code dc join
 
 # 8. list alphabetically the names and the labs of medications that in 2019 been used to treat 'dental cavities' but not been used to treat any
 # 'infectious disease'. where in which field we should strore informations 'infectious disease' and 'dental cavities' - in diagnosis?
-# should we distinguish medications with same name but different labs?
+# should we distinguish medications with same name but different labs? we can use EXCEPT
 SELECT med.name, med.lab from medication med
 where (med.name, med.lab) in (SELECT med.name, med.lab from medication med join prescription p on med.name = p.name and med.lab = p.lab
     join consultation_diagnostic cd on p.VAT_doctor = cd.VAT_doctor and p.date_timestamp = cd.date_timestamp and p.ID = cd.ID
@@ -65,3 +65,7 @@ where (med.name, med.lab) in (SELECT med.name, med.lab from medication med join 
     join diagnostic_code dc on cd.ID = dc.ID
     where YEAR(cd.date_timestamp) = 2019 and dc.description like 'dental cavities') order by med.name, med.lab;
 
+# 9. list of names and addresses of clients who have never missed an appointemnt in 2019 (should here be not exsists?)
+SELECT DISTINCT c.name, c.city, c.street, c.zip from client c join appointment a on c.VAT = a.VAT_client join consultation c1 on a.VAT_doctor = c1.VAT_doctor and a.date_timestamp = c1.date_timestamp
+    where a.VAT_client not in (select distinct ap.VAT_client from appointment ap left outer join consultation con on ap.VAT_doctor = con.VAT_doctor and ap.date_timestamp = con.date_timestamp
+    where con.VAT_doctor IS NULL and YEAR(ap.date_timestamp) = 2019) and YEAR(a.date_timestamp) =2019;
