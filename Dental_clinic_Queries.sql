@@ -8,15 +8,14 @@ SELECT DISTINCT e.name as traine_name, e.VAT, e_d.name as doctor_name, sr.evalua
     join supervision_report sr on td.VAT = sr.VAT join employee e_d on e_d.VAT = td.VAT_supervisor where sr.evaluation <= 3 or sr.description like '%insufficient%' order by sr.evaluation;
 
 # 3 Name, city and VAT of all clients, where last recent consultation SOAP objective mentions 'gingivitis' or 'periodontitis'
-# NOT WORKING PROPERLY YET, BELOW SOME QUERIES AND ATTEMPTS
-SELECT DISTINCT c.name, c.city, c.VAT, c2.date_timestamp from
+SELECT DISTINCT c.name, c.city, c.VAT from
     client c join appointment a on c.VAT = a.VAT_client join consultation c2 on a.VAT_doctor = c2.VAT_doctor and a.date_timestamp = c2.date_timestamp
-    join (select con.VAT_doctor,  MAX(con.date_timestamp) as recent_consultation from consultation con join appointment ap on con.VAT_doctor = ap.VAT_doctor
-    and con.date_timestamp = ap.date_timestamp join client cl on ap.VAT_client = cl.VAT group by cl.VAT) as r_c on c2.VAT_doctor = r_c.VAT_doctor and c2.date_timestamp = r_c.recent_consultation
-    where c2.SOAP_O like '%gingivitis%' or c2.SOAP_O like '%periodontitis%';
+    join (select cl.VAT as client_vat, MAX(con.date_timestamp) as recent_consultation from consultation con join appointment ap on con.VAT_doctor = ap.VAT_doctor
+    and con.date_timestamp = ap.date_timestamp join client cl on ap.VAT_client = cl.VAT group by cl.VAT) as r_c on c.VAT = r_c.client_vat and c2.date_timestamp = r_c.recent_consultation
+    where  c2.SOAP_O like '%gingivitis%' or c2.SOAP_O like '%periodontitis%';
 
 # QUERY TO TEST ANSWER 3.
-select cl.VAT, con.VAT_doctor,  MAX(con.date_timestamp), con.SOAP_O from consultation con join appointment ap on con.VAT_doctor = ap.VAT_doctor and con.date_timestamp = ap.date_timestamp join client cl on ap.VAT_client = cl.VAT group by cl.VAT;
+#select cl.VAT, con.VAT_doctor,  MAX(con.date_timestamp), con.SOAP_O from consultation con join appointment ap on con.VAT_doctor = ap.VAT_doctor and con.date_timestamp = ap.date_timestamp join client cl on ap.VAT_client = cl.VAT group by cl.VAT;
 
 # 4. Name, VAT, address(street, city, zip) of client that had appointments but never had consultation
 SELECT c.name, c.VAT as VAT_client, c.street, c.city, c.zip from client c join appointment a on c.VAT = a.VAT_client
@@ -46,3 +45,5 @@ SELECT DISTINCT AVG(ca1.count_nurse) as avg_num_nurses_above18, AVG(pic1.count_p
     (SELECT cd.date_timestamp, cd.VAT_doctor, COUNT(cd.ID) as count_diagnosis from consultation_diagnostic cd join appointment a on cd.date_timestamp = a.date_timestamp join client c on a.VAT_client = c.VAT
         where cd.date_timestamp >= DATE('2019-01-01') and (YEAR(CURDATE()) - YEAR(c.birth_date)) < 18 group by cd.date_timestamp, cd.VAT_doctor) as cd2
 ;
+
+
