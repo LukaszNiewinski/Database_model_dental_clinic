@@ -55,3 +55,22 @@ SELECT c.name, c.VAT as VAT_client, c.street, c.city, c.zip from client c join a
 SELECT d_c.ID as diagnosis_id, d_c.description as diagnosis_description, COUNT(DISTINCT p.name) as number_medicaments_prescribed from diagnostic_code d_c join consultation_diagnostic cd on d_c.ID = cd.ID
     join prescription p on cd.VAT_doctor = p.VAT_doctor and cd.date_timestamp = p.date_timestamp and cd.ID = p.ID
     group by d_c.ID, d_c.description order by COUNT(DISTINCT  p.name) ASC;
+
+# 6. Avg number of nurser, procedures, diagnostic codes, and prescriptions involved in consultation from year 2019.
+# show results respectively for clients above and below 18 years old.
+
+SELECT DISTINCT AVG(ca1.count_nurse) as avg_num_nurses_above18, AVG(pic1.count_procedure) as avg_num_proc_above18, AVG(cd1.count_diagnosis) as avg_num_diag_above18,
+    AVG(ca2.count_nurse) as avg_num_nurses_below18, AVG(pic2.count_procedure) as avg_num_proc_below18, AVG(cd2.count_diagnosis) as avg_num_diag_below18 from
+    (SELECT ca.date_timestamp, ca.VAT_doctor, COUNT(ca.VAT_nurse) as count_nurse from consultation_assistant ca join appointment a on ca.date_timestamp = a.date_timestamp join client c on a.VAT_client = c.VAT
+        where ca.date_timestamp >= DATE('2019-01-01') and (YEAR(CURDATE()) - YEAR(c.birth_date)) >= 18 group by ca.date_timestamp, ca.VAT_doctor) as ca1 ,
+    (SELECT pic.date_timestamp, pic.VAT_doctor, COUNT(pic.name) as count_procedure from procedure_in_consultation pic join appointment a on pic.date_timestamp = a.date_timestamp join client c on a.VAT_client = c.VAT
+        where pic.date_timestamp >= DATE('2019-01-01') and (YEAR(CURDATE()) - YEAR(c.birth_date)) >= 18 group by pic.date_timestamp, pic.VAT_doctor) as pic1,
+    (SELECT cd.date_timestamp, cd.VAT_doctor, COUNT(cd.ID) as count_diagnosis from consultation_diagnostic cd join appointment a on cd.date_timestamp = a.date_timestamp join client c on a.VAT_client = c.VAT
+        where cd.date_timestamp >= DATE('2019-01-01') and (YEAR(CURDATE()) - YEAR(c.birth_date)) >= 18 group by cd.date_timestamp, cd.VAT_doctor) as cd1,
+    (SELECT ca.date_timestamp, ca.VAT_doctor, COUNT(ca.VAT_nurse) as count_nurse from consultation_assistant ca join appointment a on ca.date_timestamp = a.date_timestamp join client c on a.VAT_client = c.VAT
+        where ca.date_timestamp >= DATE('2019-01-01') and (YEAR(CURDATE()) - YEAR(c.birth_date)) < 18 group by ca.date_timestamp, ca.VAT_doctor) as ca2 ,
+    (SELECT pic.date_timestamp, pic.VAT_doctor, COUNT(pic.name) as count_procedure from procedure_in_consultation pic join appointment a on pic.date_timestamp = a.date_timestamp join client c on a.VAT_client = c.VAT
+        where pic.date_timestamp >= DATE('2019-01-01') and (YEAR(CURDATE()) - YEAR(c.birth_date)) < 18 group by pic.date_timestamp, pic.VAT_doctor) as pic2,
+    (SELECT cd.date_timestamp, cd.VAT_doctor, COUNT(cd.ID) as count_diagnosis from consultation_diagnostic cd join appointment a on cd.date_timestamp = a.date_timestamp join client c on a.VAT_client = c.VAT
+        where cd.date_timestamp >= DATE('2019-01-01') and (YEAR(CURDATE()) - YEAR(c.birth_date)) < 18 group by cd.date_timestamp, cd.VAT_doctor) as cd2
+;

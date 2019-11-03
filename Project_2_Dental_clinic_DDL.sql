@@ -67,7 +67,7 @@ CREATE TABLE phone_number_employee(
 CREATE TABLE client(
     VAT char(15),
     name char(30),
-    birth_date datetime NOT NULL,
+    birth_date date NOT NULL,
     street char(30),
     city char(30),
     zip char(15),
