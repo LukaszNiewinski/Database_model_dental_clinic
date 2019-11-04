@@ -1,9 +1,52 @@
 
-DROP DATABASE IF EXISTS SIBD_dental_clinic;
+#DROP DATABASE IF EXISTS SIBD_dental_clinic;
 
-CREATE database SIBD_dental_clinic;
+#CREATE database SIBD_dental_clinic;
 
-use SIBD_dental_clinic;
+#use SIBD_dental_clinic;
+
+
+DROP TABLE IF EXISTS procedure_charting;
+
+DROP TABLE IF EXISTS teeth;
+
+DROP TABLE IF EXISTS procedure_radiology;
+DROP TABLE IF EXISTS procedure_in_consultation;
+
+DROP TABLE IF EXISTS procedure_clinic;
+DROP TABLE IF EXISTS prescription;
+
+
+DROP TABLE IF EXISTS medication;
+
+
+DROP TABLE IF EXISTS consultation_diagnostic;
+DROP TABLE IF EXISTS diagnostic_code_relation;
+DROP TABLE IF EXISTS diagnostic_code;
+
+
+DROP TABLE IF EXISTS consultation_assistant;
+DROP TABLE IF EXISTS consultation;
+
+
+DROP TABLE IF EXISTS appointment;
+
+DROP TABLE IF EXISTS phone_number_client;
+DROP TABLE IF EXISTS client;
+
+DROP TABLE IF EXISTS nurse;
+DROP TABLE IF EXISTS receptionist;
+
+DROP TABLE IF EXISTS supervision_report;
+DROP TABLE IF EXISTS trainee_doctor;
+DROP TABLE IF EXISTS permanent_doctor;
+DROP TABLE IF EXISTS doctor;
+
+DROP TABLE IF EXISTS phone_number_employee;
+DROP TABLE IF EXISTS employee;
+
+
+
 
 CREATE TABLE employee(
 VAT char(15),
@@ -28,7 +71,7 @@ VAT char(15),
 PRIMARY KEY (VAT),
 Foreign key (VAT) references employee(VAT)
 );
-CREATE TABLE doctor(
+CREATE TABLE doctor (
 VAT char(15),
 specialization char(30),
 biography TEXT,
@@ -182,6 +225,6 @@ CREATE TABLE procedure_charting(
     description TEXT,
     measure TEXT,
     primary key (name, VAT, date_timestamp, quadrant, number),
-    foreign key (name, VAT, date_timestamp) references procedure_in_consultation(NAME, VAT_DOCTOR, DATE_TIMESTAMP)
-
+    foreign key (name, VAT, date_timestamp) references procedure_in_consultation(NAME, VAT_DOCTOR, DATE_TIMESTAMP),
+    foreign key (quadrant, number) references teeth (quadrant, number)
 );
