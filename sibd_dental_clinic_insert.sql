@@ -127,8 +127,7 @@ INSERT INTO `nurse` (`VAT`) VALUES
 ('100071'),
 ('100072'),
 ('100073'),
-('100074'),
-('100075');
+('100074');
 
 
 INSERT INTO `receptionist` (`VAT`) VALUES
@@ -617,7 +616,6 @@ INSERT INTO `procedure_in_consultation`(`name`, `VAT_doctor`, `date_timestamp`, 
 ('Tooth extraction', '100023', '2018-03-23 23:38:07', 'Tooth drilled'),
 ('Tooth preparation', '100002', '2018-04-16 05:18:05', 'Tooth prepared'),
 ('Tooth extraction', '100031', '2019-07-10 23:10:08', 'Tooth removed'),
-
 ('Tooth preparation', '100043', '2018-05-06 05:50:48', 'Tooth prepared'),
 ('Tooth extraction', '100043', '2018-05-06 05:50:48', 'Tooth removed'),
 ('Tooth preparation', '100031', '2019-07-10 23:10:08', 'Tooth prepared'),
@@ -625,5 +623,31 @@ INSERT INTO `procedure_in_consultation`(`name`, `VAT_doctor`, `date_timestamp`, 
 ('Tooth preparation', '100044', '2018-09-03 04:35:53', 'Tooth prepared'),
 ('Tooth extraction', '100044', '2018-09-03 04:35:53', 'Tooth removed'),
 ('Tooth preparation', '100023', '2010-01-21 15:03:06', 'Tooth prepared'),
-('Tooth preparation', '100047', '2019-09-06 01:03:44', 'Tooth prepared')
-;
+('Tooth preparation', '100047', '2019-09-06 01:03:44', 'Tooth prepared');
+
+INSERT INTO teeth(quadrant, number,name)
+VALUES
+    (2, 1, 'Third Molar'),
+    (1, 1, 'Third Molar'),
+    (2, 2, 'Second Molar'),
+    (1, 2, 'Second Molar'),
+    (2, 3, 'First Molar'),
+    (1, 3, 'First Molar'),
+    (1, 4, 'Second Bicuspid'),
+    (2, 4, 'Second Bicuspid'),
+    (1, 5, 'First Bicuspid'),
+    (2, 5, 'First Bicuspid'),
+    (1, 6, 'Cuspid'),
+    (2, 6, 'Cuspid'),
+    (1, 7, 'Lateral Incisor'),
+    (2, 7, 'Lateral Incisor'),
+    (1, 8, 'Central Incisor'),
+    (2, 8, 'Central Incisor');
+
+INSERT INTO procedure_charting (name, VAT, date_timestamp,quadrant, number, description , measure)
+VALUES
+    ('Tooth extraction', '100100', '2010-10-09 07:00:24',1, 1, 'extracted', ' 5 mm hole'),
+    ('Tooth extraction', '100023', '2018-03-23 23:38:07',2, 8, 'extracted', ' 5 mm hole'),
+    ('Tooth preparation', '100043', '2018-05-06 05:50:48',2, 6, 'extracted', ' 5 mm hole'),
+    ('Tooth extraction', '100031', '2019-07-10 23:10:08',1, 3, 'extracted', ' 5 mm hole'),
+    ('Tooth preparation', '100031', '2019-07-10 23:10:08',1, 1, 'extracted', ' 5 mm hole');
