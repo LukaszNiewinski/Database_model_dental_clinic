@@ -45,3 +45,13 @@ set ID = '8'
 where (select avg(pch.measure) from procedure_charting pch natural join consultation natural join
     procedure_in_consultation natural join consultation_diagnostic where consultation_diagnostic.ID = '7')> 4;
 
+
+
+
+# FOR GABII <3
+SELECT * from consultation_diagnostic c_d
+    join procedure_in_consultation pic on c_d.date_timestamp = pic.date_timestamp
+    join procedure_charting pc on pic.name = pc.name and pic.VAT_doctor = pc.VAT and pic.date_timestamp = pc.date_timestamp
+    where c_d.ID =
+          (select dc.ID from diagnostic_code dc where dc.description like '%gingivitis%');
+

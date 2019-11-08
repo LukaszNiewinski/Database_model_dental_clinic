@@ -266,7 +266,7 @@ CREATE TABLE procedure_charting
     quadrant       ENUM ('1', '2', '3', '4'),
     number         int,
     description    TEXT,
-    measure        TEXT,
+    measure        INT,
     primary key (name, VAT, date_timestamp, quadrant, number),
     foreign key (name, VAT, date_timestamp)
         references procedure_in_consultation (NAME, VAT_DOCTOR, DATE_TIMESTAMP),

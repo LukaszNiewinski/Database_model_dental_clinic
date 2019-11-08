@@ -1531,12 +1531,13 @@ VALUES ('Ibuprofen', 'Rat & Tat'),
        ('Tabcin', 'SANOFI'),
        ('Rutinoscorbin', 'SANOFI');
 INSERT INTO `diagnostic_code` (`ID`, `description`)
-VALUES ('1', 'Removed'),
+VALUES ('1', 'gingivitis'),
        ('2', 'Drilled'),
        ('3', 'tamper-proof'),
        ('4', 'infectious disease'),
        ('5', 'dental cavities'),
        ('6', 'artificial');
+
 INSERT INTO `consultation_diagnostic` (`VAT_doctor`, `date_timestamp`, `ID`)
 VALUES ('100100', '2010-10-09 07:00:24', '1'),
        ('100100', '2010-10-09 07:00:24', '2'),
@@ -1552,7 +1553,7 @@ VALUES ('100100', '2010-10-09 07:00:24', '1'),
        ('100043', '2019-07-31 16:18:17', '4'),
        ('100031', '2019-07-10 23:10:08', '2'),
        ('100047', '2019-09-06 01:03:44', '1'),
-       ('100026', '2019-05-08 11:25:21', '4');
+       ('100026', '2019-05-08 11:25:21', '5');
 INSERT INTO consultation_assistant
 VALUES ('100100', '2010-10-09 07:00:24', '100053'),
        ('100100', '2010-10-09 07:00:24', '100054'),
@@ -1571,7 +1572,7 @@ VALUES ('100100', '2010-10-09 07:00:24', '100053'),
 INSERT INTO `prescription` (`name`, `lab`, `VAT_doctor`, `ID`, `date_timestamp`, `description`)
 VALUES ('Ibuprofen', 'Rat & Tat', '100100', '1', '2010-10-09 07:00:24', 'Theeth drilled'),
        ('Ibuprofen', 'Rat & Tat', '100100', '2', '2010-10-09 07:00:24', 'Theeth drilled'),
-       ('Ibuprofen', 'Rat & Tat', '100026', '4', '2019-05-08 11:25:21', 'Theeth drilled'),
+       ('Ibuprofen', 'Rat & Tat', '100026', '5', '2019-05-08 11:25:21', 'Theeth drilled'),
 
        ('Paracetamol', 'Bayer', '100031', '2', '2019-07-10 23:10:08', 'Theeth drilled'),
        ('Ibuprofen', 'Rat & Tat', '100047', '1', '2019-09-06 01:03:44', 'Theeth drilled'),
@@ -1622,8 +1623,8 @@ VALUES (2, 1, 'Third Molar'),
        (1, 8, 'Central Incisor'),
        (2, 8, 'Central Incisor');
 INSERT INTO procedure_charting (name, VAT, date_timestamp, quadrant, number, description, measure)
-VALUES ('Tooth extraction', '100100', '2010-10-09 07:00:24', 1, 1, 'extracted', ' 5 mm hole'),
-       ('Tooth extraction', '100023', '2018-03-23 23:38:07', 2, 8, 'extracted', ' 5 mm hole'),
-       ('Tooth preparation', '100043', '2018-05-06 05:50:48', 2, 6, 'extracted', ' 5 mm hole'),
-       ('Tooth extraction', '100031', '2019-07-10 23:10:08', 1, 3, 'extracted', ' 5 mm hole'),
-       ('Tooth preparation', '100031', '2019-07-10 23:10:08', 1, 1, 'extracted', ' 5 mm hole');
+VALUES ('Tooth extraction', '100100', '2010-10-09 07:00:24', 1, 1, 'extracted', 5),
+       ('Tooth extraction', '100023', '2018-03-23 23:38:07', 2, 8, 'extracted', 4),
+       ('Tooth preparation', '100043', '2018-05-06 05:50:48', 2, 6, 'extracted', 3),
+       ('Tooth extraction', '100031', '2019-07-10 23:10:08', 1, 3, 'extracted', 1),
+       ('Tooth preparation', '100031', '2019-07-10 23:10:08', 1, 1, 'extracted', 5);
