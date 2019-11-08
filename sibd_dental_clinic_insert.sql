@@ -127,8 +127,7 @@ INSERT INTO `nurse` (`VAT`) VALUES
 ('100071'),
 ('100072'),
 ('100073'),
-('100074'),
-('100075');
+('100074');
 
 
 INSERT INTO `receptionist` (`VAT`) VALUES
@@ -386,7 +385,6 @@ INSERT INTO `supervision_report` (`VAT`, `date_timestamp`, `description`, `evalu
 ;
 
 
-
 INSERT INTO `appointment` (`VAT_doctor`, `date_timestamp`, `description`, `VAT_client`) VALUES
 ('100000', '2020-03-01 21:53:56', 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed tortor. Integer aliquam adipiscing lacus. Ut nec urna et arcu imperdiet ullamcorper. Duis at lacus. Quisque purus sapien, gravida non, sollicitudin a, malesuada id, erat. Etiam vestibulum massa rutrum magna.', '200075'),
 ('100001', '2018-08-13 09:26:44', 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed tortor. Integer aliquam adipiscing lacus. Ut nec urna et arcu imperdiet ullamcorper. Duis at lacus. Quisque purus sapien, gravida non, sollicitudin a, malesuada', '200067'),
@@ -528,7 +526,6 @@ INSERT INTO `consultation` (`VAT_doctor`, `date_timestamp`, `SOAP_S`, `SOAP_O`, 
 ('100036', '2019-04-22 08:31:17', 'Brave Patient, everything went smooth, gingivitis', 'tooth to remove', 'Give him promo code', 'Hallo')
 ;
 
-
 INSERT INTO `medication` (`name`, `lab`) VALUES
 ('Ibuprofen', 'Rat & Tat'),
 ('Paracetamol', 'Bayer'),
@@ -547,7 +544,6 @@ INSERT INTO `diagnostic_code` (`ID`, `description`) VALUES
 ('5', 'dental cavities'),
 ('6', 'artificial')
 ;
-
 
 INSERT INTO `consultation_diagnostic` (`VAT_doctor`, `date_timestamp`, `ID`) VALUES
 ('100100', '2010-10-09 07:00:24', '1'),
@@ -584,7 +580,6 @@ INSERT INTO consultation_assistant VALUES
 ('100034', '2014-03-28 15:02:06', '100072')
 ;
 
-
 INSERT INTO `prescription` (`name`, `lab`, `VAT_doctor`, `ID`, `date_timestamp`, `description`) VALUES
 ('Ibuprofen', 'Rat & Tat', '100100', '1', '2010-10-09 07:00:24', 'Theeth drilled'),
 ('Ibuprofen', 'Rat & Tat', '100100', '2', '2010-10-09 07:00:24', 'Theeth drilled'),
@@ -617,7 +612,6 @@ INSERT INTO `procedure_in_consultation`(`name`, `VAT_doctor`, `date_timestamp`, 
 ('Tooth extraction', '100023', '2018-03-23 23:38:07', 'Tooth drilled'),
 ('Tooth preparation', '100002', '2018-04-16 05:18:05', 'Tooth prepared'),
 ('Tooth extraction', '100031', '2019-07-10 23:10:08', 'Tooth removed'),
-
 ('Tooth preparation', '100043', '2018-05-06 05:50:48', 'Tooth prepared'),
 ('Tooth extraction', '100043', '2018-05-06 05:50:48', 'Tooth removed'),
 ('Tooth preparation', '100031', '2019-07-10 23:10:08', 'Tooth prepared'),
@@ -625,5 +619,31 @@ INSERT INTO `procedure_in_consultation`(`name`, `VAT_doctor`, `date_timestamp`, 
 ('Tooth preparation', '100044', '2018-09-03 04:35:53', 'Tooth prepared'),
 ('Tooth extraction', '100044', '2018-09-03 04:35:53', 'Tooth removed'),
 ('Tooth preparation', '100023', '2010-01-21 15:03:06', 'Tooth prepared'),
-('Tooth preparation', '100047', '2019-09-06 01:03:44', 'Tooth prepared')
-;
+('Tooth preparation', '100047', '2019-09-06 01:03:44', 'Tooth prepared');
+
+INSERT INTO teeth(quadrant, number,name)
+VALUES
+    (2, 1, 'Third Molar'),
+    (1, 1, 'Third Molar'),
+    (2, 2, 'Second Molar'),
+    (1, 2, 'Second Molar'),
+    (2, 3, 'First Molar'),
+    (1, 3, 'First Molar'),
+    (1, 4, 'Second Bicuspid'),
+    (2, 4, 'Second Bicuspid'),
+    (1, 5, 'First Bicuspid'),
+    (2, 5, 'First Bicuspid'),
+    (1, 6, 'Cuspid'),
+    (2, 6, 'Cuspid'),
+    (1, 7, 'Lateral Incisor'),
+    (2, 7, 'Lateral Incisor'),
+    (1, 8, 'Central Incisor'),
+    (2, 8, 'Central Incisor');
+
+INSERT INTO procedure_charting (name, VAT, date_timestamp,quadrant, number, description , measure)
+VALUES
+    ('Tooth extraction', '100100', '2010-10-09 07:00:24',1, 1, 'extracted', ' 5 mm hole'),
+    ('Tooth extraction', '100023', '2018-03-23 23:38:07',2, 8, 'extracted', ' 5 mm hole'),
+    ('Tooth preparation', '100043', '2018-05-06 05:50:48',2, 6, 'extracted', ' 5 mm hole'),
+    ('Tooth extraction', '100031', '2019-07-10 23:10:08',1, 3, 'extracted', ' 5 mm hole'),
+    ('Tooth preparation', '100031', '2019-07-10 23:10:08',1, 1, 'extracted', ' 5 mm hole');
