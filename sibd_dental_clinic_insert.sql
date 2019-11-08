@@ -328,7 +328,9 @@ VALUES ('200000', 'Holden', '1932-05-14', '3920 Dui Rd.', 'San Miguel', '99929',
        ('200096', 'Mercado', '2012-11-18', 'Ap #482-8390 A, Street', 'Sierning', '70318', 'man', 51),
        ('200097', 'Patterson', '2000-11-09', '8306 Risus. Av.', 'Rocca d Arce', '2549', 'man', 38),
        ('200098', 'Rodriquez', '1945-02-02', 'P.O. Box 420, 1591 Urna Rd.', 'Sete Lagoas', '97556', 'man', 43),
-       ('200099', 'Hunt', '1919-03-09', '678-7935 Lobortis Rd.', 'Ravensburg', '22393', 'man', 22);
+       ('200099', 'Hunt', '1919-03-09', '678-7935 Lobortis Rd.', 'Ravensburg', '22393', 'man', 22),
+       ('200100', 'Hunter James', '1999-03-09', '678-7935 Lobortis Rd.', 'Ravensburg', '22393', 'man', 22);
+
 INSERT INTO phone_number_employee (VAT, phone)
 VALUES (100000, 783827758),
        (100000, 783827734),
