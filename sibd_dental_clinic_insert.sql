@@ -385,7 +385,6 @@ INSERT INTO `supervision_report` (`VAT`, `date_timestamp`, `description`, `evalu
 ;
 
 
-
 INSERT INTO `appointment` (`VAT_doctor`, `date_timestamp`, `description`, `VAT_client`) VALUES
 ('100000', '2020-03-01 21:53:56', 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed tortor. Integer aliquam adipiscing lacus. Ut nec urna et arcu imperdiet ullamcorper. Duis at lacus. Quisque purus sapien, gravida non, sollicitudin a, malesuada id, erat. Etiam vestibulum massa rutrum magna.', '200075'),
 ('100001', '2018-08-13 09:26:44', 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur sed tortor. Integer aliquam adipiscing lacus. Ut nec urna et arcu imperdiet ullamcorper. Duis at lacus. Quisque purus sapien, gravida non, sollicitudin a, malesuada', '200067'),
@@ -527,7 +526,6 @@ INSERT INTO `consultation` (`VAT_doctor`, `date_timestamp`, `SOAP_S`, `SOAP_O`, 
 ('100036', '2019-04-22 08:31:17', 'Brave Patient, everything went smooth, gingivitis', 'tooth to remove', 'Give him promo code', 'Hallo')
 ;
 
-
 INSERT INTO `medication` (`name`, `lab`) VALUES
 ('Ibuprofen', 'Rat & Tat'),
 ('Paracetamol', 'Bayer'),
@@ -546,7 +544,6 @@ INSERT INTO `diagnostic_code` (`ID`, `description`) VALUES
 ('5', 'dental cavities'),
 ('6', 'artificial')
 ;
-
 
 INSERT INTO `consultation_diagnostic` (`VAT_doctor`, `date_timestamp`, `ID`) VALUES
 ('100100', '2010-10-09 07:00:24', '1'),
@@ -582,7 +579,6 @@ INSERT INTO consultation_assistant VALUES
 ('100001', '2019-03-23 15:05:06', '100070'),
 ('100034', '2014-03-28 15:02:06', '100072')
 ;
-
 
 INSERT INTO `prescription` (`name`, `lab`, `VAT_doctor`, `ID`, `date_timestamp`, `description`) VALUES
 ('Ibuprofen', 'Rat & Tat', '100100', '1', '2010-10-09 07:00:24', 'Theeth drilled'),

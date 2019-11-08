@@ -100,7 +100,7 @@ CREATE TABLE trainee_doctor
 CREATE TABLE supervision_report
 (
     VAT            char(15),
-    date_timestamp DATETIME DEFAULT CURRENT_TIMESTAMP,
+    date_timestamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     description    TEXT,
     evaluation     ENUM ('1','2','3','4','5'),
     primary key (VAT, date_timestamp),
