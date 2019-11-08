@@ -1,5 +1,5 @@
 # 1. VAT, names and phone(s) numbers of clients that had appointemnt with 'Jane Sweettooth. Ordered by names.
-SELECT c.VAT, c.name, GROUP_CONCAT(DISTINCT p_c.phone) as phone_numbers
+SELECT c.VAT as client_vat, c.name as client_name, GROUP_CONCAT(DISTINCT p_c.phone) as client_phone_numbers
 FROM client c
          join appointment a on c.VAT = a.VAT_client
          join doctor d on a.VAT_doctor = d.VAT
@@ -12,27 +12,32 @@ where e.name
 GROUP BY c.VAT, c.name
 ORDER BY c.name;
 
+# check date_timestamp <= NOW() - we check only appointments which already happened ('had')
+# to display phone numbers in easy to interpret way and dont multiply records we use func GROUP_CONCAT
+
 # 2. List the names of trainees doctors with reports graded below three or 'insufficient' in the description.
 # To display: Traine name, VAT trainee, supervisor name, evaluation score, sorted by score DESC
 SELECT DISTINCT e.name   as traine_name,
-                e.VAT,
+                e.VAT    as traine_VAT,
                 e_d.name as doctor_name,
                 sr.evaluation,
-                sr.description
+                sr.description as evaluation_description
 FROM employee e
          join trainee_doctor td on e.VAT = td.VAT
          join supervision_report sr on td.VAT = sr.VAT
          join employee e_d on e_d.VAT = td.VAT_supervisor
-WHERE sr.evaluation <= 3
+WHERE sr.evaluation < 3
    or sr.description like '%insufficient%'
-ORDER BY sr.evaluation;
+ORDER BY sr.evaluation DESC;
+
+# there might be reports with score higher than 3 but with word insufficient
 
 # 3 Name, city and VAT of all clients, where last recent consultation SOAP objective mentions 'gingivitis' or 'periodontitis'
-SELECT DISTINCT c.name, c.city, c.VAT
+SELECT DISTINCT c.name as client_name, c.city as client_city, c.VAT as client_VAT
 FROM client c
          join appointment a on c.VAT = a.VAT_client
-         join consultation c2 on a.VAT_doctor = c2.VAT_doctor
-    and a.date_timestamp = c2.date_timestamp
+         join consultation con on a.VAT_doctor = con.VAT_doctor
+    and a.date_timestamp = con.date_timestamp
          JOIN (
     SELECT cl.VAT as client_vat, MAX(con.date_timestamp) as recent_consultation
     FROM consultation con
@@ -40,18 +45,23 @@ FROM client c
         and con.date_timestamp = ap.date_timestamp
              join client cl on ap.VAT_client = cl.VAT
     GROUP BY cl.VAT) as r_c on c.VAT = r_c.client_vat
-    and c2.date_timestamp = r_c.recent_consultation
-WHERE c2.SOAP_O like '%gingivitis%'
-   or c2.SOAP_O like '%periodontitis%';
+    and con.date_timestamp = r_c.recent_consultation
+WHERE con.SOAP_O like '%gingivitis%'
+   or con.SOAP_O like '%periodontitis%';
+
+# we join consultation with additional created table where we get dates of recent consultation for each client who had some consultation
+# we need to check only RECENT consultation if soap.o has aforementioned words
 
 
 # query to perform test/validation
 #select cl.VAT, con.VAT_doctor,  MAX(con.date_timestamp), con.SOAP_O from consultation con join appointment ap on con.VAT_doctor = ap.VAT_doctor and con.date_timestamp = ap.date_timestamp join client cl on ap.VAT_client = cl.VAT group by cl.VAT;
 
 # 4. Name, VAT, address(street, city, zip) of client that had appointments but never had consultation
-SELECT c.name, c.VAT as VAT_client, c.street, c.city, c.zip
+SELECT DISTINCT c.name as client_name, c.VAT as VAT_client, c.street, c.city, c.zip
     from client c join appointment a on c.VAT = a.VAT_client
-    where a.date_timestamp < CURRENT_TIME() and (a.VAT_doctor, a.date_timestamp) not in (select con.VAT_doctor, con.date_timestamp from consultation con);
+    where a.date_timestamp < NOW() and (a.VAT_doctor, a.date_timestamp) not in (select con.VAT_doctor, con.date_timestamp from consultation con);
+
+# we get the clients who had appointments and than check if the appointments they had exists in consultation
 
 # 5. For each diagnosis: code and description, list the number of distinct medication names that have been prescribed to treat that condition.
 # sort by number of distinct medications names, ASC
