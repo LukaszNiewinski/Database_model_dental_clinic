@@ -1530,13 +1530,15 @@ VALUES ('Ibuprofen', 'Rat & Tat'),
        ('Tabcin', 'Rat & Tat'),
        ('Tabcin', 'SANOFI'),
        ('Rutinoscorbin', 'SANOFI');
+
 INSERT INTO `diagnostic_code` (`ID`, `description`)
 VALUES ('1', 'gingivitis'),
        ('2', 'Drilled'),
        ('3', 'tamper-proof'),
        ('4', 'infectious disease'),
        ('5', 'dental cavities'),
-       ('6', 'artificial');
+       ('6', 'artificial'),
+       ('7', 'periodontitis');
 
 INSERT INTO `consultation_diagnostic` (`VAT_doctor`, `date_timestamp`, `ID`)
 VALUES ('100100', '2010-10-09 07:00:24', '1'),

@@ -76,7 +76,7 @@ CREATE TABLE doctor
     biography      TEXT,
     email          char(30) NOT NULL,
     PRIMARY KEY (VAT),
-    FOREIGN KEY (VAT) references employee (VAT),
+    FOREIGN KEY (VAT) references employee (VAT) ON DELETE CASCADE,
     UNIQUE (email)
 );
 
@@ -85,7 +85,7 @@ CREATE TABLE permanent_doctor
     years TINYINT  NOT NULL,
     VAT   char(15) NOT NULL,
     primary key (VAT),
-    foreign key (VAT) references doctor (VAT)
+    foreign key (VAT) references doctor (VAT) ON DELETE CASCADE
 );
 
 CREATE TABLE trainee_doctor
@@ -93,8 +93,8 @@ CREATE TABLE trainee_doctor
     VAT            char(30),
     VAT_supervisor char(30) NOT NULL,
     primary key (VAT),
-    foreign key (VAT) references doctor (VAT),
-    foreign key (VAT_supervisor) references permanent_doctor (VAT)
+    foreign key (VAT) references doctor (VAT) ON DELETE CASCADE,
+    foreign key (VAT_supervisor) references permanent_doctor (VAT) ON DELETE CASCADE
 );
 
 CREATE TABLE supervision_report
@@ -104,7 +104,7 @@ CREATE TABLE supervision_report
     description    TEXT,
     evaluation     ENUM ('1','2','3','4','5'),
     primary key (VAT, date_timestamp),
-    foreign key (VAT) references trainee_doctor (VAT)
+    foreign key (VAT) references trainee_doctor (VAT) ON DELETE CASCADE
 );
 
 CREATE TABLE phone_number_employee
@@ -112,7 +112,7 @@ CREATE TABLE phone_number_employee
     VAT   char(15),
     phone char(15),
     primary key (VAT, phone),
-    foreign key (VAT) references employee (VAT)
+    foreign key (VAT) references employee (VAT) ON DELETE CASCADE
 );
 
 CREATE TABLE client
@@ -143,7 +143,7 @@ CREATE TABLE appointment
     description    TEXT,
     VAT_client     char(15),
     primary key (VAT_doctor, date_timestamp),
-    foreign key (VAT_doctor) references doctor (VAT),
+    foreign key (VAT_doctor) references doctor (VAT) ON DELETE CASCADE,
     foreign key (VAT_client) references client (VAT)
 );
 
