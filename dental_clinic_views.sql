@@ -2,7 +2,7 @@
 #1
 # 1dim_date(date_timestamp,day,month,year)
 # IC: date_timestamp corresponds to a date existing in consultations
-CREATE VIEW sibd_dental_clinic.dim_date AS
+CREATE VIEW ist195018.dim_date AS
     SELECT c.date_timestamp as date_stamp,
            EXTRACT(DAY FROM c.date_timestamp) AS day,
            EXTRACT(MONTH FROM c.date_timestamp) AS month,
@@ -15,31 +15,26 @@ select * from dim_date;
 # dim_client(VAT,gender,age)
 # VAT: FK(client)
 
-DROP view sibd_dental_clinic.dim_age;
-CREATE VIEW sibd_dental_clinic.dim_age AS
+DROP view ist195018.dim_client;
+CREATE VIEW ist195018.dim_client AS
     SELECT c.VAT as VAT,
            c.gender as gender,
-           YEAR(CURDATE()) - YEAR(c.birth_date) - IF
-               (STR_TO_DATE(CONCAT(YEAR(CURDATE()), '-', MONTH(c.birth_date), '-', DAY(c.birth_date)) ,'%Y-%c-%e') > CURDATE(), 1, 0) AS age
+           (YEAR(CURDATE()) - YEAR(c.birth_date)) AS age
     FROM client c;
-select * from dim_age;
+select * from dim_client;
 
 #------------------------------------------------------
 # 3
 # dim_location_client(zip,city)
 # IC: zip corresponds to a zip code existing in clients
 
-drop view dim_location_client;
-CREATE VIEW sibd_dental_clinic.dim_location_client AS
+drop view ist195018.;
+CREATE VIEW ist195018.dim_location_client AS
     SELECT DISTINCT c.zip as zip,
                     c.city as city
     FROM client c;
 
-INSERT INTO `client` (`VAT`, `name`, `birth_date`, `street`, `city`, `zip`, `gender`, `age`) VALUE
-('200100', 'Simpson_double', '2007-08-25', '389-6072 Ligula. Avenue', 'Miramichi', 'J68 5BA', 'man', 32);
-select c.zip, c.city from client c where c.zip = 'J68 5BA';
-select * from dim_location where zip = 'J68 5BA';
-select * from client;
+select * from dim_location_client;
 
 
 #------------------------------------------------------
@@ -61,3 +56,13 @@ CREATE VIEW sibd_dental_clinic.facts_consults AS
 
 select name, VAT, street, city, zip from client as c, appointment as a
 where c.VAT = a.VAT_client and a.VAT_doctor not in (select VAT_doctor from consultation);
+
+
+Create View ist195018.facts_consults AS
+    SELECT COUNT(np.procedures) as num_procedures,
+    SELECT COUNT(nm.medications) as num_medications,
+    SELECT COUNT(nd.codes) as num_diagnostic_codes
+FROM dim_client, dim_date, dim_location_client.
+
+;
+SELECT pr_c.name from procedure_clinic pr_c

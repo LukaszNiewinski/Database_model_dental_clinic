@@ -1537,8 +1537,12 @@ VALUES ('1', 'gingivitis'),
        ('3', 'tamper-proof'),
        ('4', 'infectious disease'),
        ('5', 'dental cavities'),
+<<<<<<< Updated upstream
        ('6', 'artificial'),
        ('7', 'periodontitis');
+=======
+       ('6', 'periodontitis');
+>>>>>>> Stashed changes
 
 INSERT INTO `consultation_diagnostic` (`VAT_doctor`, `date_timestamp`, `ID`)
 VALUES ('100100', '2010-10-09 07:00:24', '1'),

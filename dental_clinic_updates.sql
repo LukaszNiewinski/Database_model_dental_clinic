@@ -32,26 +32,10 @@ ROLLBACK ;
 #------------------------------------------------------
 # NOT TESTED
 #4 Find the diagnosis code corresponding to gingivitis. Create also a new
-# diagnosis code corresponding to periodontitis. Change the diagnosis
-# from gingivitis to periodontitis for all clients where, for the same
-# consultation/diagnosis, a dental charting procedure shows a value
-# above 4 in terms of the average gap between the teeth and the gums.
-INSERT INTO `diagnostic_code` (`ID`, `description`) VALUES
-('7', 'gingivitis'),
-('8', 'periodontitis');
 
-UPDATE consultation_diagnostic
-set ID = '8'
-where (select avg(pch.measure) from procedure_charting pch natural join consultation natural join
-    procedure_in_consultation natural join consultation_diagnostic where consultation_diagnostic.ID = '7')> 4;
-
-
-
-
-# FOR GABII <3
-SELECT * from consultation_diagnostic c_d
+UPDATE consultation_diagnostic c_d
     join procedure_in_consultation pic on c_d.date_timestamp = pic.date_timestamp
     join procedure_charting pc on pic.name = pc.name and pic.VAT_doctor = pc.VAT and pic.date_timestamp = pc.date_timestamp
-    where c_d.ID =
-          (select dc.ID from diagnostic_code dc where dc.description like '%gingivitis%');
-
+    join consultation c on c_d.VAT_doctor = c.VAT_doctor and c_d.date_timestamp = c.date_timestamp
+set c_d.ID = (select dc.ID from diagnostic_code dc where dc.description like '%periodontitis%')
+where c_d.ID = (select dc.ID from diagnostic_code dc where dc.description like '%gingivitis%') and pc.measure >= 4;

@@ -60,13 +60,13 @@ CREATE TABLE nurse
 (
     VAT char(15),
     PRIMARY KEY (VAT),
-    Foreign key (VAT) references employee (VAT)
+    Foreign key (VAT) references employee (VAT) ON UPDATE CASCADE
 );
 CREATE TABLE receptionist
 (
     VAT char(15),
     PRIMARY KEY (VAT),
-    Foreign key (VAT) references employee (VAT)
+    Foreign key (VAT) references employee (VAT) ON UPDATE CASCADE
 );
 
 CREATE TABLE doctor
@@ -76,7 +76,11 @@ CREATE TABLE doctor
     biography      TEXT,
     email          char(30) NOT NULL,
     PRIMARY KEY (VAT),
+<<<<<<< Updated upstream
     FOREIGN KEY (VAT) references employee (VAT) ON DELETE CASCADE,
+=======
+    FOREIGN KEY (VAT) references employee (VAT) ON UPDATE CASCADE,
+>>>>>>> Stashed changes
     UNIQUE (email)
 );
 
@@ -85,7 +89,11 @@ CREATE TABLE permanent_doctor
     years TINYINT  NOT NULL,
     VAT   char(15) NOT NULL,
     primary key (VAT),
+<<<<<<< Updated upstream
     foreign key (VAT) references doctor (VAT) ON DELETE CASCADE
+=======
+    foreign key (VAT) references doctor (VAT) ON UPDATE CASCADE
+>>>>>>> Stashed changes
 );
 
 CREATE TABLE trainee_doctor
@@ -93,8 +101,13 @@ CREATE TABLE trainee_doctor
     VAT            char(30),
     VAT_supervisor char(30) NOT NULL,
     primary key (VAT),
+<<<<<<< Updated upstream
     foreign key (VAT) references doctor (VAT) ON DELETE CASCADE,
     foreign key (VAT_supervisor) references permanent_doctor (VAT) ON DELETE CASCADE
+=======
+    foreign key (VAT) references doctor (VAT),
+    foreign key (VAT_supervisor) references permanent_doctor (VAT) ON UPDATE CASCADE
+>>>>>>> Stashed changes
 );
 
 CREATE TABLE supervision_report
@@ -104,7 +117,11 @@ CREATE TABLE supervision_report
     description    TEXT,
     evaluation     ENUM ('1','2','3','4','5'),
     primary key (VAT, date_timestamp),
+<<<<<<< Updated upstream
     foreign key (VAT) references trainee_doctor (VAT) ON DELETE CASCADE
+=======
+    foreign key (VAT) references trainee_doctor (VAT) ON UPDATE CASCADE
+>>>>>>> Stashed changes
 );
 
 CREATE TABLE phone_number_employee
@@ -112,7 +129,11 @@ CREATE TABLE phone_number_employee
     VAT   char(15),
     phone char(15),
     primary key (VAT, phone),
+<<<<<<< Updated upstream
     foreign key (VAT) references employee (VAT) ON DELETE CASCADE
+=======
+    foreign key (VAT) references employee (VAT) ON UPDATE CASCADE
+>>>>>>> Stashed changes
 );
 
 CREATE TABLE client
@@ -133,7 +154,7 @@ CREATE TABLE phone_number_client
     VAT   char(15),
     phone char(15),
     primary key (VAT, phone),
-    foreign key (VAT) references client (VAT)
+    foreign key (VAT) references client (VAT) ON UPDATE CASCADE
 );
 
 CREATE TABLE appointment
@@ -143,8 +164,13 @@ CREATE TABLE appointment
     description    TEXT,
     VAT_client     char(15),
     primary key (VAT_doctor, date_timestamp),
+<<<<<<< Updated upstream
     foreign key (VAT_doctor) references doctor (VAT) ON DELETE CASCADE,
     foreign key (VAT_client) references client (VAT)
+=======
+    foreign key (VAT_doctor) references doctor (VAT) ON UPDATE CASCADE,
+    foreign key (VAT_client) references client (VAT) ON UPDATE CASCADE
+>>>>>>> Stashed changes
 );
 
 CREATE TABLE consultation
@@ -157,7 +183,7 @@ CREATE TABLE consultation
     SOAP_P         MEDIUMTEXT,
     primary key (VAT_doctor, date_timestamp),
     foreign key (VAT_doctor, date_timestamp)
-        references appointment (VAT_doctor, date_timestamp)
+        references appointment (VAT_doctor, date_timestamp) ON UPDATE CASCADE
 );
 
 CREATE TABLE consultation_assistant
@@ -166,9 +192,9 @@ CREATE TABLE consultation_assistant
     date_timestamp timestamp,
     VAT_nurse      char(15),
     primary key (VAT_doctor, date_timestamp, VAT_nurse),
-    foreign key (VAT_nurse) references nurse (VAT),
+    foreign key (VAT_nurse) references nurse (VAT) ON UPDATE CASCADE,
     foreign key (VAT_doctor, date_timestamp)
-        references consultation (VAT_doctor, date_timestamp)
+        references consultation (VAT_doctor, date_timestamp) ON UPDATE CASCADE
 );
 
 CREATE TABLE diagnostic_code
@@ -184,8 +210,8 @@ CREATE TABLE diagnostic_code_relation
     ID2  char(15),
     type char(30),
     primary key (ID1, ID2),
-    foreign key (ID1) references diagnostic_code (ID),
-    foreign key (ID2) references diagnostic_code (ID)
+    foreign key (ID1) references diagnostic_code (ID) ON UPDATE CASCADE,
+    foreign key (ID2) references diagnostic_code (ID) ON UPDATE CASCADE
 );
 
 CREATE TABLE consultation_diagnostic
@@ -195,8 +221,8 @@ CREATE TABLE consultation_diagnostic
     ID             char(15),
     primary key (VAT_doctor, date_timestamp, ID),
     foreign key (VAT_doctor, date_timestamp)
-        references consultation (VAT_doctor, date_timestamp),
-    foreign key (ID) references diagnostic_code (id)
+        references consultation (VAT_doctor, date_timestamp) ON UPDATE NO ACTION,
+    foreign key (ID) references diagnostic_code (id) ON UPDATE CASCADE
 );
 
 CREATE TABLE medication
@@ -216,8 +242,8 @@ CREATE TABLE prescription
     description    LONGTEXT,
     primary key (name, lab, VAT_doctor, date_timestamp, ID),
     foreign key (VAT_doctor, date_timestamp, ID)
-        references consultation_diagnostic (vat_doctor, date_timestamp, id),
-    foreign key (name, lab) references medication (name, lab)
+        references consultation_diagnostic (vat_doctor, date_timestamp, id) ON UPDATE CASCADE,
+    foreign key (name, lab) references medication (name, lab) ON UPDATE CASCADE
 );
 
 CREATE TABLE procedure_clinic
@@ -235,8 +261,8 @@ CREATE TABLE procedure_in_consultation
     description    LONGTEXT,
     primary key (name, VAT_doctor, date_timestamp),
     foreign key (VAT_doctor, date_timestamp)
-        references consultation (VAT_doctor, date_timestamp),
-    foreign key (name) references procedure_clinic (name)
+        references consultation (VAT_doctor, date_timestamp) ON UPDATE CASCADE,
+    foreign key (name) references procedure_clinic (name) ON UPDATE CASCADE
 );
 
 CREATE TABLE procedure_radiology
@@ -247,7 +273,7 @@ CREATE TABLE procedure_radiology
     date_timestamp timestamp,
     primary key (name, file, VAT_doctor, date_timestamp),
     foreign key (name, VAT_doctor, date_timestamp)
-        references procedure_in_consultation (name, VAT_doctor, date_timestamp)
+        references procedure_in_consultation (name, VAT_doctor, date_timestamp) ON UPDATE CASCADE
 );
 
 CREATE TABLE teeth
@@ -269,6 +295,6 @@ CREATE TABLE procedure_charting
     measure        INT,
     primary key (name, VAT, date_timestamp, quadrant, number),
     foreign key (name, VAT, date_timestamp)
-        references procedure_in_consultation (NAME, VAT_DOCTOR, DATE_TIMESTAMP),
-    foreign key (quadrant, number) references teeth (quadrant, number)
+        references procedure_in_consultation (NAME, VAT_DOCTOR, DATE_TIMESTAMP) ON UPDATE CASCADE,
+    foreign key (quadrant, number) references teeth (quadrant, number) ON UPDATE CASCADE
 );
