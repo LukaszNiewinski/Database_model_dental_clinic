@@ -62,7 +62,10 @@ Create View ist195018.facts_consults AS
     SELECT COUNT(np.procedures) as num_procedures,
     SELECT COUNT(nm.medications) as num_medications,
     SELECT COUNT(nd.codes) as num_diagnostic_codes
-FROM dim_client, dim_date, dim_location_client.
+FROM dim_client, dim_date, dim_location_client,
+(SELECT consultation_diagnostic)
 
 ;
-SELECT pr_c.name from procedure_clinic pr_c
+SELECT pr_c.name from procedure_clinic pr_c;
+SELECT d_c.ID from diagnostic_code d_c;
+SELECT d_c.ID from diagnostic_code d_c;
